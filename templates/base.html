@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html> -->
+<!-- do poprzednich ćwiczeń <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Base Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .col-side {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 1px solid #dee2e6;
+        }
+        .col-main {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+        .col-side:last-child {
+            border-right: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!- Lewa kolumna z nawigacją ->
+            <div class="col-2 bg-light p-3">
+                 include 'navigation.html' %}
+            </div>
+            
+            <!- Środkowa kolumna ->
+            <div class="col-8">
+                 block content %}
+                 endblock %}
+            </div>
+
+            <!- Prawa kolumna ->
+            <div class="col-2 bg-light"></div>
+        </div>
+    </div>
+
+   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Biblioteka Online</h1>
+                <hr>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- ćwiczenie 1
+ <!doctype html>
+<html lang="pl">
+<head>
+    <title>Ćwiczenie 1</title>
+</head>
+<body>
+    <h1>Ćwiczenie 1 - przekazanie danych z endpointa</h1>
+    <p>Imię: {{ name }}</p>
+    <p>Nazwisko: {{ surname }}</p>
+    <p>Wiek: {{ age }}</p>
+</body>
+</html> -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h3>O mnie:</h3>
+<p>Imię: Wojciech</p>
+<p>Nazwisko: Gadzina</p>
+<p>Wiek: 23 lata</p>
+{% endblock %}

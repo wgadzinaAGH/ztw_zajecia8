@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dostępne książki</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Akcja</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>
+                <a href="{{ url_for('borrow_book', book_id=book.id) }}" class="btn btn-primary btn-sm">Wypożycz</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

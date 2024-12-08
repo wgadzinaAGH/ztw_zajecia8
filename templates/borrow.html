@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Wypożyczenie książki</h2>
+<p>Książka: {{ book.title }} by {{ book.author }}</p>
+
+<form method="POST">
+    <div class="mb-3">
+        <label for="username" class="form-label">Nazwa użytkownika:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <button type="submit" class="btn btn-success">Wypożycz</button>
+</form>
+{% endblock %}
